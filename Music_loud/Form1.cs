@@ -16,5 +16,10 @@ namespace Music_loud
         {
             InitializeComponent();
         }
+
+        private void button_play_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
