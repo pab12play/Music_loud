@@ -41,6 +41,12 @@ namespace Music_loud
                 try
                 {
                     text_path.Text = openFileDialog1.FileName;
+                    TagLib.File tagFile = TagLib.File.Create(openFileDialog1.FileName);
+
+                    text_artist.Text = tagFile.Tag.Performers[0];
+                    text_title.Text = tagFile.Tag.Title;
+                    text_album.Text = tagFile.Tag.Album;
+                    text_length.Text = tagFile.Properties.Duration.ToString(@"mm\:ss");
                 }
                 catch (Exception ex)
                 {
