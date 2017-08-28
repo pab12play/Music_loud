@@ -10,22 +10,22 @@ namespace Music_loud
     {
         private string title;
         private TimeSpan lenght;
-        private string author;
+        private string artist;
         private string album;
         private string path;
 
 
-        public song(string title, TimeSpan lenght, string author, string album)
+        public song(string title, TimeSpan lenght, string artist, string album)
         {
             this.title = title;
             this.lenght = lenght;
-            this.author = author;
+            this.artist = artist;
             this.album = album;
         }
 
         public string Title { get => title; set => title = value; }
         public TimeSpan Lenght { get => lenght; set => lenght = value; }
-        public string Author { get => author; set => author = value; }
+        public string Artist { get => artist; set => artist = value; }
         public string Album { get => album; set => album = value; }
         public string Path { get => path; set => path = value; }
     }
