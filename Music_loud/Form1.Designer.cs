@@ -125,12 +125,13 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Lenght";
+            this.label4.Text = "Length";
             // 
             // text_length
             // 
             this.text_length.Location = new System.Drawing.Point(126, 146);
             this.text_length.Name = "text_length";
+            this.text_length.ReadOnly = true;
             this.text_length.Size = new System.Drawing.Size(100, 20);
             this.text_length.TabIndex = 10;
             // 
