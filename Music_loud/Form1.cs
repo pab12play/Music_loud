@@ -14,12 +14,17 @@ namespace Music_loud
     public partial class Form1 : Form
     {
         WindowsMediaPlayer player;
+        Dictionary<string, song> database;
+        TimeSpan duration;
+
         public Form1()
         {
             InitializeComponent();
             player = new WindowsMediaPlayer();
             player.URL = "test.mp3";
             player.controls.stop();
+            database = new Dictionary<string, song>();
+            duration = TimeSpan.Zero; 
         }
 
         private void button_play_Click(object sender, EventArgs e)
@@ -47,12 +52,27 @@ namespace Music_loud
                     text_title.Text = tagFile.Tag.Title;
                     text_album.Text = tagFile.Tag.Album;
                     text_length.Text = tagFile.Properties.Duration.ToString(@"mm\:ss");
+                    duration = tagFile.Properties.Duration;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
+        }
+
+        private void button_add_database_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(text_title.Text))
+            {
+                MessageBox.Show("Please enter the title of the song");
+            }
+            else
+            {
+                database.Add(text_title.Text, new song(text_title.Text, duration, text_artist.Text, text_album.Text));
+                listBox_database.Items.Add(text_title.Text);
+            }
+            
         }
     }
 }

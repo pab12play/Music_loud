@@ -39,6 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.text_length = new System.Windows.Forms.TextBox();
+            this.button_add_database = new System.Windows.Forms.Button();
+            this.listBox_database = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button_play
@@ -132,11 +134,32 @@
             this.text_length.Size = new System.Drawing.Size(100, 20);
             this.text_length.TabIndex = 10;
             // 
+            // button_add_database
+            // 
+            this.button_add_database.Location = new System.Drawing.Point(287, 28);
+            this.button_add_database.Name = "button_add_database";
+            this.button_add_database.Size = new System.Drawing.Size(75, 23);
+            this.button_add_database.TabIndex = 11;
+            this.button_add_database.Text = "Add";
+            this.button_add_database.UseVisualStyleBackColor = true;
+            this.button_add_database.Click += new System.EventHandler(this.button_add_database_Click);
+            // 
+            // listBox_database
+            // 
+            this.listBox_database.FormattingEnabled = true;
+            this.listBox_database.Location = new System.Drawing.Point(287, 64);
+            this.listBox_database.Name = "listBox_database";
+            this.listBox_database.ScrollAlwaysVisible = true;
+            this.listBox_database.Size = new System.Drawing.Size(120, 95);
+            this.listBox_database.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 464);
+            this.Controls.Add(this.listBox_database);
+            this.Controls.Add(this.button_add_database);
             this.Controls.Add(this.text_length);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -168,6 +191,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox text_length;
+        private System.Windows.Forms.Button button_add_database;
+        private System.Windows.Forms.ListBox listBox_database;
     }
 }
 
