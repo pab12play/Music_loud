@@ -74,5 +74,10 @@ namespace Music_loud
             }
             
         }
+
+        private void button_stop_Click(object sender, EventArgs e)
+        {
+            player.controls.stop();
+        }
     }
 }

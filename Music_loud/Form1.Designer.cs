@@ -41,6 +41,7 @@
             this.text_length = new System.Windows.Forms.TextBox();
             this.button_add_database = new System.Windows.Forms.Button();
             this.listBox_database = new System.Windows.Forms.ListBox();
+            this.button_stop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_play
@@ -154,11 +155,22 @@
             this.listBox_database.Size = new System.Drawing.Size(120, 95);
             this.listBox_database.TabIndex = 12;
             // 
+            // button_stop
+            // 
+            this.button_stop.Location = new System.Drawing.Point(414, 361);
+            this.button_stop.Name = "button_stop";
+            this.button_stop.Size = new System.Drawing.Size(75, 23);
+            this.button_stop.TabIndex = 13;
+            this.button_stop.Text = "Stop";
+            this.button_stop.UseVisualStyleBackColor = true;
+            this.button_stop.Click += new System.EventHandler(this.button_stop_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 464);
+            this.Controls.Add(this.button_stop);
             this.Controls.Add(this.listBox_database);
             this.Controls.Add(this.button_add_database);
             this.Controls.Add(this.text_length);
@@ -194,6 +206,7 @@
         private System.Windows.Forms.TextBox text_length;
         private System.Windows.Forms.Button button_add_database;
         private System.Windows.Forms.ListBox listBox_database;
+        private System.Windows.Forms.Button button_stop;
     }
 }
 
