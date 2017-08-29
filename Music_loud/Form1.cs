@@ -77,7 +77,7 @@ namespace Music_loud
             }
             else
             {
-                database.Add(text_title.Text, new song(text_title.Text, duration, text_artist.Text, text_album.Text));
+                database.Add(text_title.Text, new song(text_title.Text, duration, text_artist.Text, text_album.Text,text_path.Text));
                 listBox_database.Items.Add(text_title.Text);
             }
             

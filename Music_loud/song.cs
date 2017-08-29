@@ -15,12 +15,13 @@ namespace Music_loud
         private string path;
 
 
-        public song(string title, TimeSpan length, string artist, string album)
+        public song(string title, TimeSpan length, string artist, string album,string path)
         {
             this.title = title;
             this.length = length;
             this.artist = artist;
             this.album = album;
+            this.path = path;
         }
 
         public string Title { get => title; set => title = value; }
