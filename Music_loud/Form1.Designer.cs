@@ -44,6 +44,12 @@
             this.button_stop = new System.Windows.Forms.Button();
             this.button_search = new System.Windows.Forms.Button();
             this.text_search = new System.Windows.Forms.TextBox();
+            this.listBox_playlist = new System.Windows.Forms.ListBox();
+            this.button_playlist = new System.Windows.Forms.Button();
+            this.button_add_playlist = new System.Windows.Forms.Button();
+            this.button_name = new System.Windows.Forms.Button();
+            this.button_length = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_play
@@ -184,11 +190,71 @@
             this.text_search.Size = new System.Drawing.Size(100, 20);
             this.text_search.TabIndex = 15;
             // 
+            // listBox_playlist
+            // 
+            this.listBox_playlist.FormattingEnabled = true;
+            this.listBox_playlist.Location = new System.Drawing.Point(31, 333);
+            this.listBox_playlist.Name = "listBox_playlist";
+            this.listBox_playlist.ScrollAlwaysVisible = true;
+            this.listBox_playlist.Size = new System.Drawing.Size(120, 95);
+            this.listBox_playlist.TabIndex = 16;
+            // 
+            // button_playlist
+            // 
+            this.button_playlist.Location = new System.Drawing.Point(31, 269);
+            this.button_playlist.Name = "button_playlist";
+            this.button_playlist.Size = new System.Drawing.Size(75, 23);
+            this.button_playlist.TabIndex = 17;
+            this.button_playlist.Text = "New playlist";
+            this.button_playlist.UseVisualStyleBackColor = true;
+            // 
+            // button_add_playlist
+            // 
+            this.button_add_playlist.Location = new System.Drawing.Point(389, 29);
+            this.button_add_playlist.Name = "button_add_playlist";
+            this.button_add_playlist.Size = new System.Drawing.Size(100, 23);
+            this.button_add_playlist.TabIndex = 18;
+            this.button_add_playlist.Text = "Add to playlist";
+            this.button_add_playlist.UseVisualStyleBackColor = true;
+            // 
+            // button_name
+            // 
+            this.button_name.Location = new System.Drawing.Point(176, 333);
+            this.button_name.Name = "button_name";
+            this.button_name.Size = new System.Drawing.Size(75, 23);
+            this.button_name.TabIndex = 19;
+            this.button_name.Text = "Name (A-Z)";
+            this.button_name.UseVisualStyleBackColor = true;
+            // 
+            // button_length
+            // 
+            this.button_length.Location = new System.Drawing.Point(176, 377);
+            this.button_length.Name = "button_length";
+            this.button_length.Size = new System.Drawing.Size(75, 23);
+            this.button_length.TabIndex = 20;
+            this.button_length.Text = "Length";
+            this.button_length.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(176, 300);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Order By";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 464);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button_length);
+            this.Controls.Add(this.button_name);
+            this.Controls.Add(this.button_add_playlist);
+            this.Controls.Add(this.button_playlist);
+            this.Controls.Add(this.listBox_playlist);
             this.Controls.Add(this.text_search);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.button_stop);
@@ -230,6 +296,12 @@
         private System.Windows.Forms.Button button_stop;
         private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.TextBox text_search;
+        private System.Windows.Forms.ListBox listBox_playlist;
+        private System.Windows.Forms.Button button_playlist;
+        private System.Windows.Forms.Button button_add_playlist;
+        private System.Windows.Forms.Button button_name;
+        private System.Windows.Forms.Button button_length;
+        private System.Windows.Forms.Label label5;
     }
 }
 
