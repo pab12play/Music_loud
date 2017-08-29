@@ -21,15 +21,23 @@ namespace Music_loud
         {
             InitializeComponent();
             player = new WindowsMediaPlayer();
-            player.URL = "test.mp3";
-            player.controls.stop();
+            //player.URL = "test.mp3";
+            //player.controls.stop();
             database = new Dictionary<string, song>();
             duration = TimeSpan.Zero; 
         }
 
         private void button_play_Click(object sender, EventArgs e)
         {
-            player.controls.play();
+            if (listBox_database.SelectedIndex >= 0)
+            {
+                player.URL = database[listBox_database.SelectedItem.ToString()].Path;
+                player.controls.play();
+            }
+            else
+            {
+                MessageBox.Show("Choose a song");
+            }
         }
 
         private void button_browser_Click(object sender, EventArgs e)
