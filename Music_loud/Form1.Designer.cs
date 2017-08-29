@@ -54,7 +54,7 @@
             // 
             // button_play
             // 
-            this.button_play.Location = new System.Drawing.Point(414, 405);
+            this.button_play.Location = new System.Drawing.Point(458, 376);
             this.button_play.Name = "button_play";
             this.button_play.Size = new System.Drawing.Size(75, 23);
             this.button_play.TabIndex = 0;
@@ -64,7 +64,7 @@
             // 
             // button_browser
             // 
-            this.button_browser.Location = new System.Drawing.Point(151, 193);
+            this.button_browser.Location = new System.Drawing.Point(151, 146);
             this.button_browser.Name = "button_browser";
             this.button_browser.Size = new System.Drawing.Size(75, 23);
             this.button_browser.TabIndex = 1;
@@ -74,28 +74,28 @@
             // 
             // text_path
             // 
-            this.text_path.Location = new System.Drawing.Point(34, 196);
+            this.text_path.Location = new System.Drawing.Point(34, 146);
             this.text_path.Name = "text_path";
             this.text_path.Size = new System.Drawing.Size(100, 20);
             this.text_path.TabIndex = 2;
             // 
             // text_title
             // 
-            this.text_title.Location = new System.Drawing.Point(126, 32);
+            this.text_title.Location = new System.Drawing.Point(124, 29);
             this.text_title.Name = "text_title";
             this.text_title.Size = new System.Drawing.Size(100, 20);
             this.text_title.TabIndex = 3;
             // 
             // text_artist
             // 
-            this.text_artist.Location = new System.Drawing.Point(126, 67);
+            this.text_artist.Location = new System.Drawing.Point(124, 56);
             this.text_artist.Name = "text_artist";
             this.text_artist.Size = new System.Drawing.Size(100, 20);
             this.text_artist.TabIndex = 4;
             // 
             // text_album
             // 
-            this.text_album.Location = new System.Drawing.Point(126, 103);
+            this.text_album.Location = new System.Drawing.Point(124, 85);
             this.text_album.Name = "text_album";
             this.text_album.Size = new System.Drawing.Size(100, 20);
             this.text_album.TabIndex = 5;
@@ -103,7 +103,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 38);
+            this.label1.Location = new System.Drawing.Point(28, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 6;
@@ -112,7 +112,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 74);
+            this.label2.Location = new System.Drawing.Point(31, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 7;
@@ -121,7 +121,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 110);
+            this.label3.Location = new System.Drawing.Point(28, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 8;
@@ -130,7 +130,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 146);
+            this.label4.Location = new System.Drawing.Point(31, 114);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 9;
@@ -138,7 +138,7 @@
             // 
             // text_length
             // 
-            this.text_length.Location = new System.Drawing.Point(126, 146);
+            this.text_length.Location = new System.Drawing.Point(124, 114);
             this.text_length.Name = "text_length";
             this.text_length.ReadOnly = true;
             this.text_length.Size = new System.Drawing.Size(100, 20);
@@ -146,26 +146,26 @@
             // 
             // button_add_database
             // 
-            this.button_add_database.Location = new System.Drawing.Point(287, 28);
+            this.button_add_database.Location = new System.Drawing.Point(31, 172);
             this.button_add_database.Name = "button_add_database";
-            this.button_add_database.Size = new System.Drawing.Size(75, 23);
+            this.button_add_database.Size = new System.Drawing.Size(120, 23);
             this.button_add_database.TabIndex = 11;
-            this.button_add_database.Text = "Add";
+            this.button_add_database.Text = "Add song to library";
             this.button_add_database.UseVisualStyleBackColor = true;
             this.button_add_database.Click += new System.EventHandler(this.button_add_database_Click);
             // 
             // listBox_database
             // 
             this.listBox_database.FormattingEnabled = true;
-            this.listBox_database.Location = new System.Drawing.Point(287, 64);
+            this.listBox_database.Location = new System.Drawing.Point(249, 29);
             this.listBox_database.Name = "listBox_database";
             this.listBox_database.ScrollAlwaysVisible = true;
-            this.listBox_database.Size = new System.Drawing.Size(120, 95);
+            this.listBox_database.Size = new System.Drawing.Size(166, 160);
             this.listBox_database.TabIndex = 12;
             // 
             // button_stop
             // 
-            this.button_stop.Location = new System.Drawing.Point(414, 361);
+            this.button_stop.Location = new System.Drawing.Point(458, 332);
             this.button_stop.Name = "button_stop";
             this.button_stop.Size = new System.Drawing.Size(75, 23);
             this.button_stop.TabIndex = 13;
@@ -175,9 +175,9 @@
             // 
             // button_search
             // 
-            this.button_search.Location = new System.Drawing.Point(433, 193);
+            this.button_search.Location = new System.Drawing.Point(433, 65);
             this.button_search.Name = "button_search";
-            this.button_search.Size = new System.Drawing.Size(75, 23);
+            this.button_search.Size = new System.Drawing.Size(100, 23);
             this.button_search.TabIndex = 14;
             this.button_search.Text = "Search";
             this.button_search.UseVisualStyleBackColor = true;
@@ -185,7 +185,7 @@
             // 
             // text_search
             // 
-            this.text_search.Location = new System.Drawing.Point(287, 193);
+            this.text_search.Location = new System.Drawing.Point(433, 39);
             this.text_search.Name = "text_search";
             this.text_search.Size = new System.Drawing.Size(100, 20);
             this.text_search.TabIndex = 15;
@@ -193,15 +193,15 @@
             // listBox_playlist
             // 
             this.listBox_playlist.FormattingEnabled = true;
-            this.listBox_playlist.Location = new System.Drawing.Point(31, 333);
+            this.listBox_playlist.Location = new System.Drawing.Point(34, 289);
             this.listBox_playlist.Name = "listBox_playlist";
             this.listBox_playlist.ScrollAlwaysVisible = true;
-            this.listBox_playlist.Size = new System.Drawing.Size(120, 95);
+            this.listBox_playlist.Size = new System.Drawing.Size(160, 160);
             this.listBox_playlist.TabIndex = 16;
             // 
             // button_playlist
             // 
-            this.button_playlist.Location = new System.Drawing.Point(31, 269);
+            this.button_playlist.Location = new System.Drawing.Point(34, 254);
             this.button_playlist.Name = "button_playlist";
             this.button_playlist.Size = new System.Drawing.Size(75, 23);
             this.button_playlist.TabIndex = 17;
@@ -210,7 +210,7 @@
             // 
             // button_add_playlist
             // 
-            this.button_add_playlist.Location = new System.Drawing.Point(389, 29);
+            this.button_add_playlist.Location = new System.Drawing.Point(433, 94);
             this.button_add_playlist.Name = "button_add_playlist";
             this.button_add_playlist.Size = new System.Drawing.Size(100, 23);
             this.button_add_playlist.TabIndex = 18;
@@ -219,7 +219,7 @@
             // 
             // button_name
             // 
-            this.button_name.Location = new System.Drawing.Point(176, 333);
+            this.button_name.Location = new System.Drawing.Point(222, 332);
             this.button_name.Name = "button_name";
             this.button_name.Size = new System.Drawing.Size(75, 23);
             this.button_name.TabIndex = 19;
@@ -228,7 +228,7 @@
             // 
             // button_length
             // 
-            this.button_length.Location = new System.Drawing.Point(176, 377);
+            this.button_length.Location = new System.Drawing.Point(222, 376);
             this.button_length.Name = "button_length";
             this.button_length.Size = new System.Drawing.Size(75, 23);
             this.button_length.TabIndex = 20;
@@ -238,7 +238,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(176, 300);
+            this.label5.Location = new System.Drawing.Point(222, 299);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 13);
             this.label5.TabIndex = 21;
