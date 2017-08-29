@@ -87,5 +87,21 @@ namespace Music_loud
         {
             player.controls.stop();
         }
+
+        private void button_search_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(text_search.Text))
+            {
+                MessageBox.Show("Enter name of the song");
+            }
+            else if (database.ContainsKey(text_search.Text))
+            {
+                listBox_database.SelectedItem = text_search.Text;
+            }
+            else
+            {
+                MessageBox.Show("Song not found");
+            }
+        }
     }
 }

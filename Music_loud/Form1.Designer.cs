@@ -42,6 +42,8 @@
             this.button_add_database = new System.Windows.Forms.Button();
             this.listBox_database = new System.Windows.Forms.ListBox();
             this.button_stop = new System.Windows.Forms.Button();
+            this.button_search = new System.Windows.Forms.Button();
+            this.text_search = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button_play
@@ -165,11 +167,30 @@
             this.button_stop.UseVisualStyleBackColor = true;
             this.button_stop.Click += new System.EventHandler(this.button_stop_Click);
             // 
+            // button_search
+            // 
+            this.button_search.Location = new System.Drawing.Point(433, 193);
+            this.button_search.Name = "button_search";
+            this.button_search.Size = new System.Drawing.Size(75, 23);
+            this.button_search.TabIndex = 14;
+            this.button_search.Text = "Search";
+            this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
+            // 
+            // text_search
+            // 
+            this.text_search.Location = new System.Drawing.Point(287, 193);
+            this.text_search.Name = "text_search";
+            this.text_search.Size = new System.Drawing.Size(100, 20);
+            this.text_search.TabIndex = 15;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 464);
+            this.Controls.Add(this.text_search);
+            this.Controls.Add(this.button_search);
             this.Controls.Add(this.button_stop);
             this.Controls.Add(this.listBox_database);
             this.Controls.Add(this.button_add_database);
@@ -207,6 +228,8 @@
         private System.Windows.Forms.Button button_add_database;
         private System.Windows.Forms.ListBox listBox_database;
         private System.Windows.Forms.Button button_stop;
+        private System.Windows.Forms.Button button_search;
+        private System.Windows.Forms.TextBox text_search;
     }
 }
 
