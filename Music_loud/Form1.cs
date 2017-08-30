@@ -26,8 +26,6 @@ namespace Music_loud
         {
             InitializeComponent();
             player = new WindowsMediaPlayer();
-            //player.URL = "test.mp3";
-            //player.controls.stop();
             database = new Dictionary<string, song>();
             playlist = new List<song>();
             duration = TimeSpan.Zero;
