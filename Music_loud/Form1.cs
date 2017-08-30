@@ -139,6 +139,7 @@ namespace Music_loud
                 if (ascending_title)
                 {
                     List<song> SortedList = playlist.OrderBy(x => x.Title).ToList();
+                    //List<song> SortedList = sort_title_ascending(playlist);
                     foreach (song song1 in SortedList)
                     {
                         listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
@@ -150,6 +151,7 @@ namespace Music_loud
                 else
                 {
                     List<song> SortedList = playlist.OrderByDescending(x => x.Title).ToList();
+                    //List<song> SortedList = sort_title_descending(playlist);
                     foreach (song song1 in SortedList)
                     {
                         listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
@@ -169,6 +171,7 @@ namespace Music_loud
                 if (ascending_length)
                 {
                     List<song> SortedList = playlist.OrderBy(x => x.Length).ToList();
+                    //List<song> SortedList = sort_length_ascending(playlist);
                     foreach (song song1 in SortedList)
                     {
                         listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
@@ -180,6 +183,7 @@ namespace Music_loud
                 else
                 {
                     List<song> SortedList = playlist.OrderByDescending(x => x.Length).ToList();
+                    //List<song> SortedList = sort_length_descending(playlist);
                     foreach (song song1 in SortedList)
                     {
                         listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
@@ -219,6 +223,82 @@ namespace Music_loud
             }
             listBox_playlist.SelectedIndex = -1;
             listBox_library.SelectedIndex = index;
+        }
+
+        private List<song> sort_title_ascending(List<song> list)
+        {
+            song[] a = list.ToArray();
+            int i, j;
+            for (i = 0; i < a.Count() -1;i++)
+            {
+                for (j=i+1;j< a.Count(); j++)
+                {
+                    if (a[i].Title.CompareTo(a[j].Title)==1)
+                    {
+                        song aux = a[i];
+                        a[i] = a[j];
+                        a[j] = aux;
+                    }
+                }
+            }
+            return a.ToList();
+        }
+
+        private List<song> sort_title_descending(List<song> list)
+        {
+            song[] a = list.ToArray();
+            int i, j;
+            for (i = 0; i < a.Count() -1;i++)
+            {
+                for (j=i+1;j< a.Count(); j++)
+                {
+                    if (a[i].Title.CompareTo(a[j].Title)==-1)
+                    {
+                        song aux = a[i];
+                        a[i] = a[j];
+                        a[j] = aux;
+                    }
+                }
+            }
+            return a.ToList();
+        }
+
+        private List<song> sort_length_ascending(List<song> list)
+        {
+            song[] a = list.ToArray();
+            int i, j;
+            for (i = 0; i < a.Count() - 1; i++)
+            {
+                for (j = i + 1; j < a.Count(); j++)
+                {
+                    if (a[i].Length > a[j].Length)
+                    {
+                        song aux = a[i];
+                        a[i] = a[j];
+                        a[j] = aux;
+                    }
+                }
+            }
+            return a.ToList();
+        }
+
+        private List<song> sort_length_descending(List<song> list)
+        {
+            song[] a = list.ToArray();
+            int i, j;
+            for (i = 0; i < a.Count() - 1; i++)
+            {
+                for (j = i + 1; j < a.Count(); j++)
+                {
+                    if (a[i].Length < a[j].Length)
+                    {
+                        song aux = a[i];
+                        a[i] = a[j];
+                        a[j] = aux;
+                    }
+                }
+            }
+            return a.ToList();
         }
     }
 }
