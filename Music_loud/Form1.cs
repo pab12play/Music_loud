@@ -21,17 +21,22 @@ namespace Music_loud
         bool ascending_title; //true ascending, false descending
         bool ascending_length; //true ascending, false descending
         string path_selected_song;
+        Timer tmr = new Timer();
 
         public Form1()
         {
             InitializeComponent();
             player = new WindowsMediaPlayer();
+            player.PlayStateChange += new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(wplayer_PlayStateChange);
             library = new Dictionary<string, song>();
             playlist = new List<song>();
             duration = TimeSpan.Zero;
             ascending_title = true;
             ascending_length = true;
             path_selected_song = "";
+            tmr.Interval = 10;
+            tmr.Stop();
+            tmr.Tick += new EventHandler(tmr_Tick);
         }
 
         private void button_play_Click(object sender, EventArgs e)
@@ -223,6 +228,53 @@ namespace Music_loud
             }
             listBox_playlist.SelectedIndex = -1;
             listBox_library.SelectedIndex = index;
+        }
+
+        void wplayer_PlayStateChange(int NewState)
+        {
+            if (NewState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
+            {
+                if(listBox_library.SelectedIndex >= 0)
+                {
+                    if (listBox_library.SelectedIndex < library.Count-1)
+                    {
+                        listBox_library.SelectedIndex = listBox_library.SelectedIndex + 1;
+                    }
+                    else
+                    {
+                        listBox_library.SelectedIndex = 0;
+                    }
+                    player.URL = library[listBox_library.SelectedItem.ToString()].Path;
+                    tmr.Start();
+                }
+                else
+                {
+                    if (listBox_library.SelectedIndex < playlist.Count-1)
+                    {
+                        listBox_library.SelectedIndex = listBox_library.SelectedIndex + 1;
+                    }
+                    else
+                    {
+                        listBox_library.SelectedIndex = 0;
+                    }
+                    string title = listBox_playlist.SelectedItem.ToString().Split((char)9)[1];
+                    foreach (song song1 in playlist)
+                    {
+                        if (song1.Title.Equals(title))
+                        {
+                            player.URL = song1.Path;
+                            tmr.Start();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        void tmr_Tick(object sender, EventArgs e)
+        {
+            tmr.Stop();
+            player.controls.play();
         }
 
         private List<song> sort_title_ascending(List<song> list)
