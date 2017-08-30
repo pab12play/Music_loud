@@ -162,6 +162,7 @@
             this.listBox_database.ScrollAlwaysVisible = true;
             this.listBox_database.Size = new System.Drawing.Size(166, 160);
             this.listBox_database.TabIndex = 12;
+            this.listBox_database.SelectedIndexChanged += new System.EventHandler(this.listBox_database_SelectedIndexChanged);
             // 
             // button_stop
             // 
@@ -198,6 +199,7 @@
             this.listBox_playlist.ScrollAlwaysVisible = true;
             this.listBox_playlist.Size = new System.Drawing.Size(160, 160);
             this.listBox_playlist.TabIndex = 16;
+            this.listBox_playlist.SelectedIndexChanged += new System.EventHandler(this.listBox_playlist_SelectedIndexChanged);
             // 
             // button_playlist
             // 

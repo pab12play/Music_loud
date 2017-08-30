@@ -20,6 +20,7 @@ namespace Music_loud
         TimeSpan duration;
         bool ascending_title; //true ascending, false descending
         bool ascending_length; //true ascending, false descending
+        string path_selected_song;
 
         public Form1()
         {
@@ -32,13 +33,14 @@ namespace Music_loud
             duration = TimeSpan.Zero;
             ascending_title = true;
             ascending_length = true;
+            path_selected_song = "";
         }
 
         private void button_play_Click(object sender, EventArgs e)
         {
-            if (listBox_database.SelectedIndex >= 0)
+            if (listBox_database.SelectedIndex >= 0 || listBox_playlist.SelectedIndex >= 0)
             {
-                player.URL = database[listBox_database.SelectedItem.ToString()].Path;
+                player.URL = path_selected_song;
                 player.controls.play();
             }
             else
@@ -188,6 +190,35 @@ namespace Music_loud
                     ascending_length = true;
                 }
             }
+        }
+
+        private void listBox_playlist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox_playlist.SelectedIndex;
+            if (listBox_playlist.SelectedIndex >= 0)
+            {
+                foreach (song song1 in playlist)
+                {
+                    if (song1.Title.Equals(listBox_playlist.SelectedItem.ToString()))
+                    {
+                        path_selected_song = song1.Path;
+                        break;
+                    }
+                }
+            }
+            listBox_database.SelectedIndex = -1;
+            listBox_playlist.SelectedIndex = index;
+        }
+
+        private void listBox_database_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = listBox_database.SelectedIndex;
+            if (listBox_database.SelectedIndex >= 0)
+            {
+                path_selected_song = database[listBox_database.SelectedItem.ToString()].Path;
+            }
+            listBox_playlist.SelectedIndex = -1;
+            listBox_database.SelectedIndex = index;
         }
     }
 }
