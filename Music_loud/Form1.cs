@@ -121,8 +121,9 @@ namespace Music_loud
         {
             if (listBox_library.SelectedIndex >= 0)
             {
-                playlist.Add(library[listBox_library.SelectedItem.ToString()]);
-                listBox_playlist.Items.Add(listBox_library.SelectedItem.ToString());
+                song song1 = library[listBox_library.SelectedItem.ToString()];
+                playlist.Add(song1);
+                listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
             }
             else
             {
@@ -140,7 +141,7 @@ namespace Music_loud
                     List<song> SortedList = playlist.OrderBy(x => x.Title).ToList();
                     foreach (song song1 in SortedList)
                     {
-                        listBox_playlist.Items.Add(song1.Title);
+                        listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
                     }
                     playlist = SortedList;
                     button_order_name.Text = "Title (Z-A)";
@@ -151,7 +152,7 @@ namespace Music_loud
                     List<song> SortedList = playlist.OrderByDescending(x => x.Title).ToList();
                     foreach (song song1 in SortedList)
                     {
-                        listBox_playlist.Items.Add(song1.Title);
+                        listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
                     }
                     playlist = SortedList;
                     button_order_name.Text = "Title (A-Z)";
@@ -170,7 +171,7 @@ namespace Music_loud
                     List<song> SortedList = playlist.OrderBy(x => x.Length).ToList();
                     foreach (song song1 in SortedList)
                     {
-                        listBox_playlist.Items.Add(song1.Title);
+                        listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
                     }
                     playlist = SortedList;
                     button_order_length.Text = "Length Desc.";
@@ -181,7 +182,7 @@ namespace Music_loud
                     List<song> SortedList = playlist.OrderByDescending(x => x.Length).ToList();
                     foreach (song song1 in SortedList)
                     {
-                        listBox_playlist.Items.Add(song1.Title);
+                        listBox_playlist.Items.Add(song1.Length.ToString(@"mm\:ss") + (char)9 + song1.Title);
                     }
                     playlist = SortedList;
                     button_order_length.Text = "Length Asc.";
@@ -195,9 +196,10 @@ namespace Music_loud
             int index = listBox_playlist.SelectedIndex;
             if (listBox_playlist.SelectedIndex >= 0)
             {
+                string title = listBox_playlist.SelectedItem.ToString().Split((char)9)[1];
                 foreach (song song1 in playlist)
                 {
-                    if (song1.Title.Equals(listBox_playlist.SelectedItem.ToString()))
+                    if (song1.Title.Equals(title))
                     {
                         path_selected_song = song1.Path;
                         break;
