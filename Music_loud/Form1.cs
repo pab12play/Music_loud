@@ -15,7 +15,7 @@ namespace Music_loud
     public partial class Form1 : Form
     {
         WindowsMediaPlayer player;
-        Dictionary<string, song> database;
+        Dictionary<string, song> library;
         List<song> playlist;
         TimeSpan duration;
         bool ascending_title; //true ascending, false descending
@@ -26,7 +26,7 @@ namespace Music_loud
         {
             InitializeComponent();
             player = new WindowsMediaPlayer();
-            database = new Dictionary<string, song>();
+            library = new Dictionary<string, song>();
             playlist = new List<song>();
             duration = TimeSpan.Zero;
             ascending_title = true;
@@ -36,7 +36,7 @@ namespace Music_loud
 
         private void button_play_Click(object sender, EventArgs e)
         {
-            if (listBox_database.SelectedIndex >= 0 || listBox_playlist.SelectedIndex >= 0)
+            if (listBox_library.SelectedIndex >= 0 || listBox_playlist.SelectedIndex >= 0)
             {
                 player.URL = path_selected_song;
                 player.controls.play();
@@ -76,7 +76,7 @@ namespace Music_loud
             }
         }
 
-        private void button_add_database_Click(object sender, EventArgs e)
+        private void button_add_library_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(text_title.Text))
             {
@@ -84,8 +84,8 @@ namespace Music_loud
             }
             else
             {
-                database.Add(text_title.Text, new song(text_title.Text, duration, text_artist.Text, text_album.Text,text_path.Text));
-                listBox_database.Items.Add(text_title.Text);
+                library.Add(text_title.Text, new song(text_title.Text, duration, text_artist.Text, text_album.Text,text_path.Text));
+                listBox_library.Items.Add(text_title.Text);
             }
             
         }
@@ -101,9 +101,9 @@ namespace Music_loud
             {
                 MessageBox.Show("Enter name of the song");
             }
-            else if (database.ContainsKey(text_search.Text))
+            else if (library.ContainsKey(text_search.Text))
             {
-                listBox_database.SelectedItem = text_search.Text;
+                listBox_library.SelectedItem = text_search.Text;
             }
             else
             {
@@ -119,10 +119,10 @@ namespace Music_loud
 
         private void button_add_playlist_Click(object sender, EventArgs e)
         {
-            if (listBox_database.SelectedIndex >= 0)
+            if (listBox_library.SelectedIndex >= 0)
             {
-                playlist.Add(database[listBox_database.SelectedItem.ToString()]);
-                listBox_playlist.Items.Add(listBox_database.SelectedItem.ToString());
+                playlist.Add(library[listBox_library.SelectedItem.ToString()]);
+                listBox_playlist.Items.Add(listBox_library.SelectedItem.ToString());
             }
             else
             {
@@ -204,19 +204,19 @@ namespace Music_loud
                     }
                 }
             }
-            listBox_database.SelectedIndex = -1;
+            listBox_library.SelectedIndex = -1;
             listBox_playlist.SelectedIndex = index;
         }
 
-        private void listBox_database_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_library_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int index = listBox_database.SelectedIndex;
-            if (listBox_database.SelectedIndex >= 0)
+            int index = listBox_library.SelectedIndex;
+            if (listBox_library.SelectedIndex >= 0)
             {
-                path_selected_song = database[listBox_database.SelectedItem.ToString()].Path;
+                path_selected_song = library[listBox_library.SelectedItem.ToString()].Path;
             }
             listBox_playlist.SelectedIndex = -1;
-            listBox_database.SelectedIndex = index;
+            listBox_library.SelectedIndex = index;
         }
     }
 }

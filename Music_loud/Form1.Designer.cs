@@ -39,8 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.text_length = new System.Windows.Forms.TextBox();
-            this.button_add_database = new System.Windows.Forms.Button();
-            this.listBox_database = new System.Windows.Forms.ListBox();
+            this.button_add_library = new System.Windows.Forms.Button();
+            this.listBox_library = new System.Windows.Forms.ListBox();
             this.button_stop = new System.Windows.Forms.Button();
             this.button_search = new System.Windows.Forms.Button();
             this.text_search = new System.Windows.Forms.TextBox();
@@ -144,25 +144,25 @@
             this.text_length.Size = new System.Drawing.Size(100, 20);
             this.text_length.TabIndex = 10;
             // 
-            // button_add_database
+            // button_add_library
             // 
-            this.button_add_database.Location = new System.Drawing.Point(31, 172);
-            this.button_add_database.Name = "button_add_database";
-            this.button_add_database.Size = new System.Drawing.Size(120, 23);
-            this.button_add_database.TabIndex = 11;
-            this.button_add_database.Text = "Add song to library";
-            this.button_add_database.UseVisualStyleBackColor = true;
-            this.button_add_database.Click += new System.EventHandler(this.button_add_database_Click);
+            this.button_add_library.Location = new System.Drawing.Point(31, 172);
+            this.button_add_library.Name = "button_add_library";
+            this.button_add_library.Size = new System.Drawing.Size(120, 23);
+            this.button_add_library.TabIndex = 11;
+            this.button_add_library.Text = "Add song to library";
+            this.button_add_library.UseVisualStyleBackColor = true;
+            this.button_add_library.Click += new System.EventHandler(this.button_add_library_Click);
             // 
-            // listBox_database
+            // listBox_library
             // 
-            this.listBox_database.FormattingEnabled = true;
-            this.listBox_database.Location = new System.Drawing.Point(249, 29);
-            this.listBox_database.Name = "listBox_database";
-            this.listBox_database.ScrollAlwaysVisible = true;
-            this.listBox_database.Size = new System.Drawing.Size(166, 160);
-            this.listBox_database.TabIndex = 12;
-            this.listBox_database.SelectedIndexChanged += new System.EventHandler(this.listBox_database_SelectedIndexChanged);
+            this.listBox_library.FormattingEnabled = true;
+            this.listBox_library.Location = new System.Drawing.Point(249, 29);
+            this.listBox_library.Name = "listBox_library";
+            this.listBox_library.ScrollAlwaysVisible = true;
+            this.listBox_library.Size = new System.Drawing.Size(166, 160);
+            this.listBox_library.TabIndex = 12;
+            this.listBox_library.SelectedIndexChanged += new System.EventHandler(this.listBox_library_SelectedIndexChanged);
             // 
             // button_stop
             // 
@@ -264,8 +264,8 @@
             this.Controls.Add(this.text_search);
             this.Controls.Add(this.button_search);
             this.Controls.Add(this.button_stop);
-            this.Controls.Add(this.listBox_database);
-            this.Controls.Add(this.button_add_database);
+            this.Controls.Add(this.listBox_library);
+            this.Controls.Add(this.button_add_library);
             this.Controls.Add(this.text_length);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -297,8 +297,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox text_length;
-        private System.Windows.Forms.Button button_add_database;
-        private System.Windows.Forms.ListBox listBox_database;
+        private System.Windows.Forms.Button button_add_library;
+        private System.Windows.Forms.ListBox listBox_library;
         private System.Windows.Forms.Button button_stop;
         private System.Windows.Forms.Button button_search;
         private System.Windows.Forms.TextBox text_search;
