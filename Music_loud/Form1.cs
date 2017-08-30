@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
+using System.Linq;
 
 namespace Music_loud
 {
@@ -15,7 +16,10 @@ namespace Music_loud
     {
         WindowsMediaPlayer player;
         Dictionary<string, song> database;
+        List<song> playlist;
         TimeSpan duration;
+        bool ascending_title; //true ascending, false descending
+        bool ascending_length; //true ascending, false descending
 
         public Form1()
         {
@@ -24,7 +28,10 @@ namespace Music_loud
             //player.URL = "test.mp3";
             //player.controls.stop();
             database = new Dictionary<string, song>();
-            duration = TimeSpan.Zero; 
+            playlist = new List<song>();
+            duration = TimeSpan.Zero;
+            ascending_title = true;
+            ascending_length = true;
         }
 
         private void button_play_Click(object sender, EventArgs e)
@@ -101,6 +108,85 @@ namespace Music_loud
             else
             {
                 MessageBox.Show("Song not found");
+            }
+        }
+
+        private void button_playlist_Click(object sender, EventArgs e)
+        {
+            listBox_playlist.Items.Clear();
+            playlist = new List<song>();
+        }
+
+        private void button_add_playlist_Click(object sender, EventArgs e)
+        {
+            if (listBox_database.SelectedIndex >= 0)
+            {
+                playlist.Add(database[listBox_database.SelectedItem.ToString()]);
+                listBox_playlist.Items.Add(listBox_database.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("Choose a song");
+            }
+        }
+
+        private void button_order_name_Click(object sender, EventArgs e)
+        {
+            if (playlist.Count > 1)
+            {
+                listBox_playlist.Items.Clear();
+                if (ascending_title)
+                {
+                    List<song> SortedList = playlist.OrderBy(x => x.Title).ToList();
+                    foreach (song song1 in SortedList)
+                    {
+                        listBox_playlist.Items.Add(song1.Title);
+                    }
+                    playlist = SortedList;
+                    button_order_name.Text = "Title (Z-A)";
+                    ascending_title = false;
+                }
+                else
+                {
+                    List<song> SortedList = playlist.OrderByDescending(x => x.Title).ToList();
+                    foreach (song song1 in SortedList)
+                    {
+                        listBox_playlist.Items.Add(song1.Title);
+                    }
+                    playlist = SortedList;
+                    button_order_name.Text = "Title (A-Z)";
+                    ascending_title = true;
+                }
+            }
+        }
+
+        private void button_order_length_Click(object sender, EventArgs e)
+        {
+            if (playlist.Count > 1)
+            {
+                listBox_playlist.Items.Clear();
+                if (ascending_length)
+                {
+                    List<song> SortedList = playlist.OrderBy(x => x.Length).ToList();
+                    foreach (song song1 in SortedList)
+                    {
+                        listBox_playlist.Items.Add(song1.Title);
+                    }
+                    playlist = SortedList;
+                    button_order_length.Text = "Length Desc.";
+                    ascending_length = false;
+                }
+                else
+                {
+                    List<song> SortedList = playlist.OrderByDescending(x => x.Length).ToList();
+                    foreach (song song1 in SortedList)
+                    {
+                        listBox_playlist.Items.Add(song1.Title);
+                    }
+                    playlist = SortedList;
+                    button_order_length.Text = "Length Asc.";
+                    ascending_length = true;
+                }
             }
         }
     }

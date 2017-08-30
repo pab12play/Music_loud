@@ -47,8 +47,8 @@
             this.listBox_playlist = new System.Windows.Forms.ListBox();
             this.button_playlist = new System.Windows.Forms.Button();
             this.button_add_playlist = new System.Windows.Forms.Button();
-            this.button_name = new System.Windows.Forms.Button();
-            this.button_length = new System.Windows.Forms.Button();
+            this.button_order_name = new System.Windows.Forms.Button();
+            this.button_order_length = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -207,6 +207,7 @@
             this.button_playlist.TabIndex = 17;
             this.button_playlist.Text = "New playlist";
             this.button_playlist.UseVisualStyleBackColor = true;
+            this.button_playlist.Click += new System.EventHandler(this.button_playlist_Click);
             // 
             // button_add_playlist
             // 
@@ -216,24 +217,27 @@
             this.button_add_playlist.TabIndex = 18;
             this.button_add_playlist.Text = "Add to playlist";
             this.button_add_playlist.UseVisualStyleBackColor = true;
+            this.button_add_playlist.Click += new System.EventHandler(this.button_add_playlist_Click);
             // 
-            // button_name
+            // button_order_name
             // 
-            this.button_name.Location = new System.Drawing.Point(222, 332);
-            this.button_name.Name = "button_name";
-            this.button_name.Size = new System.Drawing.Size(75, 23);
-            this.button_name.TabIndex = 19;
-            this.button_name.Text = "Name (A-Z)";
-            this.button_name.UseVisualStyleBackColor = true;
+            this.button_order_name.Location = new System.Drawing.Point(222, 332);
+            this.button_order_name.Name = "button_order_name";
+            this.button_order_name.Size = new System.Drawing.Size(90, 23);
+            this.button_order_name.TabIndex = 19;
+            this.button_order_name.Text = "Title (A-Z)";
+            this.button_order_name.UseVisualStyleBackColor = true;
+            this.button_order_name.Click += new System.EventHandler(this.button_order_name_Click);
             // 
-            // button_length
+            // button_order_length
             // 
-            this.button_length.Location = new System.Drawing.Point(222, 376);
-            this.button_length.Name = "button_length";
-            this.button_length.Size = new System.Drawing.Size(75, 23);
-            this.button_length.TabIndex = 20;
-            this.button_length.Text = "Length";
-            this.button_length.UseVisualStyleBackColor = true;
+            this.button_order_length.Location = new System.Drawing.Point(222, 376);
+            this.button_order_length.Name = "button_order_length";
+            this.button_order_length.Size = new System.Drawing.Size(90, 23);
+            this.button_order_length.TabIndex = 20;
+            this.button_order_length.Text = "Length Asc.";
+            this.button_order_length.UseVisualStyleBackColor = true;
+            this.button_order_length.Click += new System.EventHandler(this.button_order_length_Click);
             // 
             // label5
             // 
@@ -250,8 +254,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 464);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button_length);
-            this.Controls.Add(this.button_name);
+            this.Controls.Add(this.button_order_length);
+            this.Controls.Add(this.button_order_name);
             this.Controls.Add(this.button_add_playlist);
             this.Controls.Add(this.button_playlist);
             this.Controls.Add(this.listBox_playlist);
@@ -299,8 +303,8 @@
         private System.Windows.Forms.ListBox listBox_playlist;
         private System.Windows.Forms.Button button_playlist;
         private System.Windows.Forms.Button button_add_playlist;
-        private System.Windows.Forms.Button button_name;
-        private System.Windows.Forms.Button button_length;
+        private System.Windows.Forms.Button button_order_name;
+        private System.Windows.Forms.Button button_order_length;
         private System.Windows.Forms.Label label5;
     }
 }
